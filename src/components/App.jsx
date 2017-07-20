@@ -2,10 +2,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {      
-      playerVid: this.props.videos[0],
-      vidList: this.props.videos
-       
-    
+      playerVid: this.props.videos[0],    
     };
   }
   render() {
@@ -21,14 +18,15 @@ class App extends React.Component {
             <VideoPlayer video={this.state.playerVid} />
           </div>
           <div className="col-md-5">
-            <VideoList videos={this.state.vidList} />
+            <VideoList videos={this.props.videos} onClick={this.videoListEntryClick.bind(this)} />
           </div>
         </div>
       </div>
     );
   }
-  videoListEntryClick () {
-    console.log('HAHAHAHAHAHA');
+  videoListEntryClick (key) {
+    console.log(key);
+    // this.setState({playerVid: result}) 
   }
   
 }
