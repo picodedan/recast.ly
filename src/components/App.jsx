@@ -1,8 +1,11 @@
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      done: false
+    this.state = {      
+      playerVid: this.props.videos[0],
+      vidList: this.props.videos
+       
+    
     };
   }
   render() {
@@ -10,22 +13,22 @@ class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <VideoPlayer video={this.props.videos[0]} />
+            <div> Placeholder for search Bar </div>
           </div>
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <div><h5><em>videoPlayer</em> view goes here</h5></div>
+            <VideoPlayer video={this.state.playerVid} />
           </div>
           <div className="col-md-5">
-            <VideoList videos={window.exampleVideoData} />
+            <VideoList videos={this.state.vidList} />
           </div>
         </div>
       </div>
     );
   }
-  videoListEntryClick (event) {
-    
+  videoListEntryClick () {
+    console.log('HAHAHAHAHAHA');
   }
   
 }
