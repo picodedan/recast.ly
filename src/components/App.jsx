@@ -24,8 +24,8 @@ class App extends React.Component {
     //output to props.search(object,callbackmethod);
     var obj = {
       //stuff and things needed for ajax
-      max: 5,
       query: input,
+      max: 5,
       key: window.YOUTUBE_API_KEY
     };
     this.props.search(obj, this.newVideosTime.bind(this));
